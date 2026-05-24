@@ -45,7 +45,6 @@ static inline uint32_t bound_check(uint32_t coord,
 uint8_t INTERACTIVE = 0;
 
 int main(int argc, char** argv) {
-  // TODO modify this to accept arguments for interactive or not
   int c;
   while ((c = getopt(argc, argv, "vi")) != -1) {
     if (c == 'v') {
