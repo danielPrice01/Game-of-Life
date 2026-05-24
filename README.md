@@ -1,4 +1,4 @@
-# Game-of-Life
+# Game-of-Life (Raylib, C)
 
 **Quick project I threw together as I am learning raylib**
 
