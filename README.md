@@ -36,3 +36,7 @@
 - LINE_THICKNESS (default 2)
 - BORDER_COLOR (default WHITE)
 - CELL_COLOR (default RED)
+
+---
+## Compiling
+See [https://www.raylib.com](https://www.raylib.com) for how to compile raylib project depending on OS. Otherwise no additional requirements. 
