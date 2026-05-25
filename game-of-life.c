@@ -46,19 +46,24 @@ uint8_t INTERACTIVE = 0;
 
 int main(int argc, char** argv) {
   int c;
+  uint8_t verbose = 0;
   while ((c = getopt(argc, argv, "vi")) != -1) {
     if (c == 'v') {
-      int logfd = open("/dev/null", O_WRONLY);
-      if (logfd == -1) {
-        perror("open");
-        return 1;
-      }
-
-      dup2(logfd, STDOUT_FILENO);
-      dup2(logfd, STDERR_FILENO);
+      verbose = 1;
     } else if (c == 'i') {
       INTERACTIVE = 1;
     }
+  }
+
+  if (!verbose) {
+    int logfd = open("/dev/null", O_WRONLY);
+    if (logfd == -1) {
+      perror("open");
+      return 1;
+    }
+
+    dup2(logfd, STDOUT_FILENO);
+    dup2(logfd, STDERR_FILENO);
   }
 
   uint8_t grid[GRID_ROWS][GRID_COLS];
