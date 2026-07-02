@@ -4,9 +4,11 @@ CXX := gcc
 CXXFLAGS := -Wall -Wextra -Wpedantic -g
 LDLIBS := -lraylib
 
+TARGET := game-of-life
+
 all:
-	$(CXX) $(CXXFLAGS) -o game-of-life game-of-life.c $(LDLIBS)	
+	$(CXX) $(CXXFLAGS) -o $(TARGET) game-of-life.c $(LDLIBS)	
 
 clean:
-	rm -rf $(TARGET) $(OBJS)
+	rm -rf $(TARGET) 
 
